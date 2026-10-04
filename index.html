@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Download</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.box {
+    max-width: 400px;
+    margin: auto;
+    background: #222;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+input, button {
+    width: 90%;
+    padding: 13px;
+    margin: 8px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+}
+
+button {
+    background: #2196f3;
+    color: white;
+    cursor: pointer;
+}
+
+#step2, #step3, #download {
+    display: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <!-- Password -->
+    <div id="step1">
+        <h2>Download Access</h2>
+        <p>পাসওয়ার্ড দিন</p>
+
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="checkPassword()">Continue</button>
+
+        <p id="wrong" style="color:red;"></p>
+    </div>
+
+
+    <!-- Ad -->
+    <div id="step2">
+        <h2>Advertisement</h2>
+
+        <p>অনুগ্রহ করে বিজ্ঞাপনটি দেখুন।</p>
+
+        <!-- এখানে তোমার Ad Network-এর কোড বসাতে পারবে -->
+
+        <button onclick="showFollow()">Continue</button>
+    </div>
+
+
+    <!-- Facebook -->
+    <div id="step3">
+        <h2>একটি ছোট কাজ বাকি</h2>
+
+        <p>ডাউনলোড চালু করতে আমাদের Facebook পেজ/প্রোফাইলে যান।</p>
+
+        <a href="https://www.facebook.com/share/1CJK8fHyua/" target="_blank">
+            <button>Facebook খুলুন</button>
+        </a>
+
+        <br>
+
+        <button onclick="showDownload()">আমি Facebook খুলেছি — Continue</button>
+    </div>
+
+
+    <!-- Download -->
+    <div id="download">
+        <h2>Download Ready ✅</h2>
+
+        <p>এখন অ্যাপটি ডাউনলোড করুন।</p>
+
+        <a href="EMON%20VIP%20DIP%20location%20panel%20(2).apk" download>
+            <button>Download APK</button>
+        </a>
+    </div>
+
+</div>
+
+
+<script>
+  
+
+function checkPassword() {
+
+    const password = document.getElementById("password").value;
+
+    // এখানে তোমার পাসওয়ার্ড বসাও
+    const correctPassword = "1234";
+
+    if (password === correctPassword) {
+
+        document.getElementById("step1").style.display = "none";
+        document.getElementById("step2").style.display = "block";
+
+    } else {
+
+        document.getElementById("wrong").innerText =
+        "ভুল পাসওয়ার্ড!";
+    }
+}
+
+
+function showFollow() {
+
+    document.getElementById("step2").style.display = "none";
+    document.getElementById("step3").style.display = "block";
+}
+
+
+function showDownload() {
+
+    document.getElementById("step3").style.display = "none";
+    document.getElementById("download").style.display = "block";
+}
+
+</script>
+
+</body>
+          </html>
